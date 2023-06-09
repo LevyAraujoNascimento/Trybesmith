@@ -7,6 +7,12 @@ const newProduct = async (req: Request, res: Response): Promise<Response> => {
   return res.status(201).send(product.data);
 };
 
+const listAll = async (_req: Request, res: Response): Promise<Response> => {
+  const products = await productService.listAll();
+  return res.status(200).send(products.data);
+};
+
 export default {
   newProduct,
+  listAll,
 };
