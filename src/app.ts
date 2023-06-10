@@ -1,6 +1,7 @@
 import express from 'express'; // Iniciando
 import productController from './database/controllers/product.controller';
 import orderController from './database/controllers/order.controller';
+import userController from './database/controllers/user.controller';
 
 const app = express();
 
@@ -11,5 +12,7 @@ app.post('/products', productController.newProduct);
 app.get('/products', productController.listAll);
 
 app.get('/orders', orderController.listAll);
+
+app.post('/login', userController.login);
 
 export default app;
