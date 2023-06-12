@@ -1,7 +1,7 @@
 import { Product } from 'src/types/Product';
 import { ServiceResponse } from 'src/types/ServiceResponse';
 import ProductModel,
-{ ProductInputtableTypes, ProductSequelizeModel } from '../models/product.model';
+{ ProductInputtableTypes, ProductSequelizeModel } from '../database/models/product.model';
 
 const newProduct = async (product: ProductInputtableTypes): Promise<ServiceResponse<Product>> => {
   if (!product.name) return { message: 'name is required', data: null };

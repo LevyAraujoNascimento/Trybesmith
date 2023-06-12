@@ -1,7 +1,7 @@
 import express from 'express'; // Iniciando
-import productController from './database/controllers/product.controller';
-import orderController from './database/controllers/order.controller';
-import userController from './database/controllers/user.controller';
+import productController from './controllers/product.controller';
+import orderController from './controllers/order.controller';
+import userController from './controllers/user.controller';
 import validName from './database/middlewares/nameValidation';
 import validPrice from './database/middlewares/priceValidation';
 

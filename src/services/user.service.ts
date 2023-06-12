@@ -2,8 +2,8 @@ import brcypt from 'bcryptjs';
 import { ServiceResponse } from 'src/types/ServiceResponse';
 import { Token } from 'src/types/Token';
 import { Login } from 'src/types/Login';
-import UserModel from '../models/user.model';
-import jwtUtils from '../utils/jwt.utils';
+import UserModel from '../database/models/user.model';
+import jwtUtils from '../database/utils/jwt.utils';
 
 const login = async (user: Login): Promise<ServiceResponse<Token>> => {
   if (!user.username || !user.password) {
