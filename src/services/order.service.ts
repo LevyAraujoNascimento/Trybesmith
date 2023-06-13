@@ -1,4 +1,6 @@
 import { OrderList } from 'src/types/OrderList';
+import { Order } from 'src/types/Order';
+import { ServiceResponse } from 'src/types/ServiceResponse';
 import OrderModel from '../database/models/order.model';
 import ProductModel from '../database/models/product.model';
 
@@ -20,6 +22,12 @@ const listAll = async (): Promise<OrderList> => {
   return result;
 };
 
+const newOrder = async (order: Order): Promise<ServiceResponse<Order>> => {
+  const result = await OrderModel.create(order);
+  return { message: null, data: result.dataValues };       
+};
+
 export default {
   listAll,
+  newOrder,
 };
