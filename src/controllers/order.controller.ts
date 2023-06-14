@@ -8,6 +8,9 @@ const listAll = async (_req: Request, res: Response): Promise<Response> => {
 
 const newOrder = async (req: Request, res: Response): Promise<Response> => {
   const order = await orderService.newOrder(req.body);
+  if (!order) {
+    return res.status(430).end();  
+  }
   return res.status(201).json(req.body);  
 };
 
