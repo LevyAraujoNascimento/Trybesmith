@@ -7,7 +7,7 @@ const login = async (req: Request, res: Response): Promise<Response> => {
     return res.status(401).json({ message: token.message });
   }
   if (token.message) return res.status(400).json({ message: token.message });
-  return res.status(200).send({ token: token.data });
+  return res.status(200).json({ token: token.data });
 };
 
 export default {
